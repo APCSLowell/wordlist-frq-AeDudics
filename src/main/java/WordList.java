@@ -11,8 +11,9 @@ public class WordList
   public int numWordsOfLength(int len)
   {
     int cool = 0;
-    for(int i = 0; i < WordList.size(); i++){
-      if(WordList.get(i).size().equals(len)){
+    for(Object mabob : WordList){
+      String thingy = (String)mabob;
+      if(thingy.length() == len){
         cool++;
       }
     }
@@ -21,9 +22,10 @@ public class WordList
 
   public void removeWordsOfLength(int len)
   {
-    for(int i = 0; i < WordList.size(); i++){
-      if(WordList.get(i).size().equals(len)){
-        WordList.remove(WordList.get(i));
+    for(int i = WordList.size(); i >= 0; i--){
+      String thing = (String)WordList.get(i);
+      if(thing.length() == len){
+        WordList.remove(i);
       }
     }
   }
